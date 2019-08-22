@@ -19,7 +19,18 @@ for the account has been setup you can access and view the account using the
 We have configured Travis to deploy CF template updates.  Travis deploys using
 [sceptre](https://sceptre.cloudreach.com/latest/about.html)
 
-# Contributions
+## Contributions
+Contributions are welcome.
+
+Requirements:
+* Install [pre-commit](https://pre-commit.com/#install)
+
+## Testing
+As a pre-deployment step we syntatically validate our sceptre and
+cloudformation yaml files with [pre-commit](https://pre-commit.com).
+
+Please install pre-commit, once installed the file validations will
+automatically run on every commit.
 
 ## Issues
 * https://sagebionetworks.jira.com/projects/IT
