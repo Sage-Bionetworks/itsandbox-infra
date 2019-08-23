@@ -1,0 +1,11 @@
+template_path: "remote/packer.yaml"
+stack_name: "packer"
+parameters:
+  Department: "Platform"
+  Project: "Infrastructure"
+  OwnerEmail: "khai.do@sagebase.org"
+hooks:
+  before_create:
+    - !cmd "curl https://s3.amazonaws.com/{{stack_group_config.admincentral_cf_bucket}}/aws-infra/master/packer.yaml --create-dirs -o templates/remote/packer.yaml"
+  before_update:
+    - !cmd "curl https://s3.amazonaws.com/{{stack_group_config.admincentral_cf_bucket}}/aws-infra/master/packer.yaml --create-dirs -o templates/remote/packer.yaml"
