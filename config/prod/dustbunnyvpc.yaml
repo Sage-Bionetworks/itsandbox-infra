@@ -1,10 +1,10 @@
 template_path: "remote/vpc.yaml"
-stack_name: "vpc"
+stack_name: "dustbunnyvpc"
 dependencies:
-  - prod/bootstrap.yaml
+  - prod/essentials.yaml
 parameters:
   VpcSubnetPrefix: "10.29"
-  VpcName: dustbunnyvpc
+  VpcName: "dustbunnyvpc"
 hooks:
   before_create:
     - !cmd "curl https://s3.amazonaws.com/{{stack_group_config.admincentral_cf_bucket}}/aws-infra/master/vpc.yaml --create-dirs -o templates/remote/vpc.yaml"
