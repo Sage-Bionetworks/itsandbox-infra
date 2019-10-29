@@ -37,7 +37,7 @@ Resources:
     Properties:
       UserName: joe.smith@sagebase.org
       Groups:
-        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSIAMAllUsersGroup
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
@@ -46,7 +46,7 @@ Resources:
     Properties:
       UserName: tess.thyer@sagebase.org
       Groups:
-        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSIAMAllUsersGroup
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
