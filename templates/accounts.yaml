@@ -37,7 +37,7 @@ Resources:
     Properties:
       UserName: joe.smith@sagebase.org
       Groups:
-        - !Ref AWSIAMAllUsersGroup
+        - !Ref AWSIAMNoAccessGroup
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
@@ -115,6 +115,11 @@ Resources:
       Roles:
         -
           !Ref AWSIAMAdminRole
+  AWSIAMNoAccessGroup:
+    Type: 'AWS::IAM::Group'
+    Properties:
+      ManagedPolicyArns:
+        - !Ref AWSIAMEnforceMfaPolicy
   AWSIAMAllUsersGroup:
     Type: 'AWS::IAM::Group'
     Properties:
