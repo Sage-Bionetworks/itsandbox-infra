@@ -41,6 +41,15 @@ Resources:
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
+  AWSIAMTessThyer:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: tess.thyer@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
   AWSIAMDeveloperUsersGroup:
     Type: 'AWS::IAM::Group'
     Properties:
