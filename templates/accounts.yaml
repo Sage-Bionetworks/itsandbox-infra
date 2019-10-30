@@ -110,6 +110,8 @@ Resources:
               - cloudformation:ValidateTemplate
               - cloudformation:UpdateStack
               - s3:GetObject
+              - ec2:*
+              - s3:*
             Resource: "*"
   AWSIAMDynamoDenyDeletePolicy:
     Type: 'AWS::IAM::ManagedPolicy'
