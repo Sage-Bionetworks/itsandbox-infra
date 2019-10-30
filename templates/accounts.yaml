@@ -74,6 +74,45 @@ Resources:
             Action:
               - "sts:AssumeRole"
       Path: "/"
+  AWSIAMServiceCatalogLaunchRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          -
+            Effect: "Allow"
+            Principal:
+              Service:
+                - servicecatalog.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Path: "/"
+      ManagedPolicyArns:
+        - !Ref AWSServiceCatalogLaunchPolicy
+  AWSServiceCatalogLaunchPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      Description: Policy allows creation of products in service catalog.
+      Path: "/"
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - catalog-user:*
+              - cloudformation:CreateStack
+              - cloudformation:DeleteStack
+              - cloudformation:DescribeStackEvents
+              - cloudformation:DescribeStacks
+              - cloudformation:GetTemplateSummary
+              - cloudformation:SetStackPolicy
+              - cloudformation:ValidateTemplate
+              - cloudformation:UpdateStack
+              - s3:GetObject
+              - ec2:*
+              - s3:*
+            Resource: "*"
   AWSIAMDynamoDenyDeletePolicy:
     Type: 'AWS::IAM::ManagedPolicy'
     Properties:
