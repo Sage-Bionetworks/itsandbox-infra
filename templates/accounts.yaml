@@ -50,6 +50,15 @@ Resources:
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
+  AWSIAMWilliamPoehlman:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: william.poehlman@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
   AWSIAMDeveloperUsersGroup:
     Type: 'AWS::IAM::Group'
     Properties:
