@@ -46,7 +46,7 @@ Resources:
     Properties:
       UserName: tess.thyer@sagebase.org
       Groups:
-        - !Ref AWSIAMAllUsersGroup
+        - !Ref AWSIAMNoAccessGroup
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
