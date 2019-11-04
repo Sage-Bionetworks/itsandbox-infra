@@ -47,6 +47,7 @@ Resources:
       UserName: tess.thyer@sagebase.org
       Groups:
         - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
@@ -190,6 +191,11 @@ Resources:
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/job-function/Billing
         - !Ref AWSIAMOrganizationsFullAccessPolicy
+  AWSServiceCatalogEndUsersGroup:
+    Type: 'AWS::IAM::Group'
+    Properties:
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AWSServiceCatalogEndUserFullAccess
   # policy to enforce MFA
   AWSIAMEnforceMfaPolicy:
     Type: 'AWS::IAM::ManagedPolicy'
