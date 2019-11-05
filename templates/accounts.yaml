@@ -57,6 +57,57 @@ Resources:
       UserName: william.poehlman@sagebase.org
       Groups:
         - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMBruceHoff:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: bruce.hoff@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMMarcoMarasca:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: marco.marasca@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMJamesEddy:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: james.eddy@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMVanessaBarone:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: vanessa.barone@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMDumindaAluthgamage:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: duminda.aluthgamage@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
