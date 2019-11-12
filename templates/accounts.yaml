@@ -51,6 +51,7 @@ Resources:
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
+  # Sci Comp Working Group Testers
   AWSIAMWilliamPoehlman:
     Type: 'AWS::IAM::User'
     Properties:
@@ -105,6 +106,57 @@ Resources:
     Type: 'AWS::IAM::User'
     Properties:
       UserName: duminda.aluthgamage@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMThomasYu:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: thomas.yu@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  # Service Catalog Testers
+  AWSIAMPhilSnyder:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: phil.snyder@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMJakeGockley:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: jake.gockley@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMKennethDaily:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: kenneth.daily@sagebase.org
+      Groups:
+        - !Ref AWSIAMNoAccessGroup
+        - !Ref AWSServiceCatalogEndUsersGroup
+      LoginProfile:
+        Password: !Ref InitNewUserPassword
+        PasswordResetRequired: true
+  AWSIAMMeghasyamTummalacherla:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: meghasyam@sagebase.org
       Groups:
         - !Ref AWSIAMNoAccessGroup
         - !Ref AWSServiceCatalogEndUsersGroup
