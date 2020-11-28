@@ -4,7 +4,7 @@ dependencies:
   - "prod/dustbunnyvpc.yaml"
 parameters:
   VpcName: "dustbunnyvpc"
-  TransitGatewayId: 'tgw-08aa3c487e457374a'   # sage-tgw transit gateway
+  TransitGatewayId: 'tgw-0004e7e3454cacac5'   # sage-tgw transit gateway
 hooks:
   before_launch:
     - !cmd "curl https://{{stack_group_config.admincentral_cf_bucket}}.s3.amazonaws.com/aws-infra/master/transit-gateway-attachment.yaml --create-dirs -o templates/remote/transit-gateway-attachment.yaml"
